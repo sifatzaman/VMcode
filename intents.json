@@ -68,6 +68,14 @@
             ],
             "responses":["google"
             ]
+        },
+        {
+            "tag":"order",
+            "patterns":["I want some", "I want" , "Want some", "Give me", "Give", "My order is",
+                "My Order", "Order", "Provide me"
+            ],
+            "responses":["order"
+            ]
         }
     ]
 }

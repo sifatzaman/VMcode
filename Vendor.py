@@ -30,10 +30,11 @@ from Listen import listen
 from Speak import say
 from Task import InputExecution
 from Task import NonInputExecution
-
+from FoodOrder import TakeOrder
 
 def Main():
     sentence = listen()
+    sentence = sentence.lower()
     result = str(sentence)
 
     if sentence == "exit":
@@ -69,6 +70,9 @@ def Main():
 
                 elif "wikipedia" in reply:
                     InputExecution(reply, result)
+
+                elif "order" in reply:
+                    TakeOrder(sentence)
 
                 else:
                     say(reply)
