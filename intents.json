@@ -1,0 +1,73 @@
+{
+    "intents":[
+        {
+            "tag":"greeting",
+            "patterns":["hello","hii","hey","wake up"
+            ],
+            "responses":["Hello Sir","How can I help you, Sir.","Hello Sir You want some food",
+                "Hello Dear","Hi, Here's the best Vendor", "Hello, Here's world's first AI Vendor"
+            ]
+        },
+        {
+            "tag":"bye",
+            "patterns":["bye","goodbye","see you later","sleep"
+            ],
+            "responses":["Thanks sir, Bye.","Thanks sir, Come Again Sir","Bye, Sir.","Thanks sir, Good Bye",
+                "Thanks sir, It'll be Nice To Meet You Again.", "Thanks sir, See You Later"
+            ]
+        },
+        {
+            "tag":"health",
+            "patterns":["how are you","how you","are you fine","are you good", "What's Up"
+            ],
+            "responses":["I am Fine Sir. What should I serve you Sir?","Perfect Sir. What should I serve you Sir?",
+                "Cool. What is your order clear?", "All good sir. Any order?"
+            ]
+        },
+        {
+            "tag":"identity",
+            "patterns":["your name", "what is your name", "who are you", "what are you", "Tell something about you",
+                "Tell about you", "Who is Vendor", "Who you"
+            ],
+            "responses":["I Am Vendor. I am an A.I Shopkeeper. I can take your order and serve the food you want.",
+                "My Name is Vendor. I am the best shopkeeper in the world",
+                "Ok Sir, This is Vendor. World's first AI Shopkeeper, in charge of this Vending Machine."
+            ]
+        },
+        {
+            "tag":"time",
+            "patterns":["what is time","time","what's the time"
+            ],
+            "responses":["time"
+            ]
+        },
+        {
+            "tag":"date",
+            "patterns":["what is date","date","what's the date"
+            ],
+            "responses":["date"
+            ]
+        },
+        {
+            "tag":"day",
+            "patterns":["what is day","day","din","what's the day","today"
+            ],
+            "responses":["day"
+            ]
+        },
+        {
+            "tag":"wikipedia",
+            "patterns":["who is","about","what is","wikipedia"
+            ],
+            "responses":["wikipedia"
+            ]
+        },
+        {
+            "tag":"google",
+            "patterns":["google search","google","search"
+            ],
+            "responses":["google"
+            ]
+        }
+    ]
+}
