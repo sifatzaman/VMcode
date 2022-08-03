@@ -7,7 +7,7 @@ def listen():
     with sr.Microphone() as source:
         print("\tListening... ")
         r.pause_threshold = 2
-        audio = r.listen(source, 0, 10)
+        audio = r.listen(source, 0, 7)
 
     command = ""
     try:

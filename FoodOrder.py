@@ -54,7 +54,7 @@ def OrderProcess(food, quantity):
                 i = i+1
             x = x+1
 
-    elif confirmation == "no":
+    else:
         say("The Order Process is Collapsed. I am cancelling your order. Please re-order.")
         say("What should I serve you?")
 
@@ -69,7 +69,7 @@ def TakeOrder(sentence):
         if items == "pepsi":
             food.append("pepsi")
 
-        if items == "coca":
+        if items == "coca" or items == "coca-cola":
             food.append("coca-cola")
 
         if items == "due":
