@@ -18,7 +18,7 @@
         },
         {
             "tag":"health",
-            "patterns":["how are you","how you","are you fine","are you good", "What's Up"
+            "patterns":["how are you", "how you", "are you fine", "are you good", "What's Up"
             ],
             "responses":["I am Fine Sir. What should I serve you Sir?","Perfect Sir. What should I serve you Sir?",
                 "Cool. What is your order clear?", "All good sir. Any order?"
@@ -70,9 +70,8 @@
             ]
         },
         {
-            "tag":"order",
-            "patterns":["I want some", "I want" , "Want some", "Give me", "Give", "My order is",
-                "My Order", "Order", "Provide me"
+            "tag": "order",
+            "patterns":[ "I want some", "I want" , "Want some", "Give me", "My order is"
             ],
             "responses":["order"
             ]

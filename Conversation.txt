@@ -1,0 +1,12 @@
+
+ -------------------------------------------------------------------------- akeCustomer: ok
+Customer: no objection
+Customer: exites of chocolate
+Vendor: 3 pieces of cake
+Vendor: Is that okay?
+Vendor: Total Price is: 85 Taka 
+Vendor: Here is your food
+Vendor: Please tell me any objection about the food or about me sir.
+Vendor: Okay sir. Thanks for your feedback
+Vendor: I couldn't Understand your command
+Vendor: Thanks sir, Bye.

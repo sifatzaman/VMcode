@@ -1,18 +1,49 @@
 from word2number import w2n
 from Speak import say
 from Listen import listen, listen_s
+from Task import take_objection
+from VMServer import server_update
+from VMServer import server_fetch
+from VMServer import admin_update
+import time
+file = open("Conversation.txt", "w")
+
+def match_server(food, Quantity):
+    items = server_fetch()
+    sum = 0
+    j = 0
+    for item in food:
+        for pieces in items:
+            if item == pieces[1]:
+                if int(Quantity[j]) <= int(pieces[2]):
+                    sum = sum + int(Quantity[j])* int(pieces[3])
+                    pieces[2] = int(pieces[2]) - int(Quantity[j])
+                else:
+                    say(f"Sorry Sir, I don't have {Quantity[j]} {item}. I am serving the rest of the foods.")
+                    food = food.__delitem__(j)
+                    Quantity = Quantity.__delitem__(j)
+                    match_server(food, Quantity)
+        j = j + 1
+    admin_update(items)
+    return sum, food, Quantity
 
 def makeint(num):
-    if num == "a":
-        return 1
+    try:
+        if num == "a":
+            return 1
 
-    if num == "tu" or num == "to" or num == "too":
-        return 2
+        if num == "tu" or num == "to" or num == "too":
+            return 2
 
-    else:
-        res = w2n.word_to_num(num)
-        # print("The string after performing replace : " + str(res))
-        return res
+        else:
+            res = w2n.word_to_num(num)
+            # print("The string after performing replace : " + str(res))
+            return res
+    except:
+        say("Sorry Sir, again not clear, Quantity is  ")
+        s1 = listen_s()
+        s1 = s1.lower()
+        makeint(s1)
 
 def Retake(foods):
 
@@ -40,8 +71,13 @@ def OrderProcess(food, quantity):
     confirmation = listen_s()
     confirmation = confirmation.lower()
 
-    if confirmation == "ok" or confirmation == "okay":
-        say("Thanks Sir. Here is the Qr code: ")
+    if confirmation == "ok" or confirmation == "okay" or confirmation == "yes":
+        final_output = match_server(food,quantity)
+        food = final_output[1]
+        quantity = final_output[2]
+        Total_price = final_output[0]
+
+        say(f"Total Price is: {Total_price} Taka ")
 
         say("Here is your food")
 
@@ -55,10 +91,18 @@ def OrderProcess(food, quantity):
             x = x+1
 
     else:
+
         say("The Order Process is Collapsed. I am cancelling your order. Please re-order.")
         say("What should I serve you?")
 
+    objection = take_objection()
+    q = 0
+    for item in food:
+        server_update(item, quantity[q], "Male", "Nagad", objection)
+        time.sleep(1.5)
+        q = q+1
 
+    file.write("\n -------------------------------------------------------------------------- ")
 
 def TakeOrder(sentence):
 
@@ -66,8 +110,8 @@ def TakeOrder(sentence):
     quantity = []
     for items in sentence:
 
-        if items == "pepsi":
-            food.append("pepsi")
+        if items == "cake":
+            food.append("cake")
 
         if items == "coca" or items == "coca-cola":
             food.append("coca-cola")

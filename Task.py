@@ -1,7 +1,7 @@
 # Function
 import datetime
 from Speak import say
-
+from Listen import listen
 
 # 2 Types
 
@@ -44,8 +44,8 @@ def InputExecution(tag, query):
     if "wikipedia" in tag:
         name = str(query).replace("who is", "").replace("about", "").replace("what is", "").replace("wikipedia", "")
         import wikipedia
-        result = wikipedia.summary(name, sentences=2)
-        say("According to Wikipedia")
+        result = "According to wikipedia" + wikipedia.summary(name, sentences=2)
+        result = result
         say(result)
         say("That's all for Now. Thank you.")
 
@@ -54,3 +54,11 @@ def InputExecution(tag, query):
         query = query.replace("search", "")
         import pywhatkit
         pywhatkit.search(query)
+
+def take_objection():
+    say("Please tell me any objection about the food or about me sir.")
+    any_obj = listen()
+
+    say("Okay sir. Thanks for your feedback")
+
+    return any_obj

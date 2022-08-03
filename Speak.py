@@ -1,8 +1,10 @@
 from gtts import gTTS
 import playsound
 
+file = open("Conversation.txt", "w")
 
 def say(text):
+    file.write("\nVendor: " + text)
     tts = gTTS(text=text, lang="en")
     filename = "voice.mp3"
     tts.save(filename)
